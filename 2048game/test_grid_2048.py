@@ -40,3 +40,8 @@ def test_grid_add_new_tile():
     tiles = grid_get_all_tiles(game_grid)
     assert 2 or 4 in tiles
 
+def test_init_game():
+    grid = init_game(4)
+    tiles = grid_get_all_tiles(grid)
+    assert 2 or 4 in tiles
+    assert len(get_empty_tiles_positions(grid)) == 14

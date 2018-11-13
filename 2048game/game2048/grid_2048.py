@@ -15,29 +15,34 @@ def get_value_new_tile() :
     else :
         return "4"
         
-def grid_add_new_tile(game_grid,taille) : 
+def grid_add_new_tile(game_grid,taille, forceValue = "-1") : 
     #ajoute une nouvelle tuile de valeur aléatoire
-    if not " " in grid_get_all_tiles(game_grid) : #On vérifie qu'il y a au moins une place de libre
+    game_grid = normalize_grid_value(game_grid)
+    if not "0" in grid_get_all_tiles(game_grid) : #On vérifie qu'il y a au moins une place de libre
         return game_grid
-    newtilex, newtiley = random.randint(0,taille-1),random.randint(0,taille-1)
-    while game_grid[newtilex][newtiley] != " " : #On cherche une place libre
-        newtilex, newtiley = random.randint(0,taille-1),random.randint(0,taille-1)
-    game_grid[newtilex][newtiley] = get_value_new_tile()
+    newtilex, newtiley = get_new_position(game_grid)
+    if forceValue == "-1" :      #Ici forceValue permet de décider de la valeur à attribuer à la tuile, par défaut on donne une valeur aléatoire à la tuile
+        game_grid[newtilex][newtiley] = get_value_new_tile()
+    else :
+        game_grid[newtilex][newtiley] = forceValue
     return game_grid
     
         
 def grid_get_all_tiles(game_grid) :
     #Renvoie une liste de toutes les tuiles, ligne par ligne, de la grille
+    game_grid = normalize_grid_value(game_grid)
     all_tiles_list = []
     for row in game_grid :
         for i in range(len(row)) : #On transforme les vides en "0"
             if row[i] == " " :
                 row[i] = "0"
         all_tiles_list += row
+    game_grid = normalize_grid_value(game_grid)
     return all_tiles_list
     
     
 def addFirstTiles(game_grid,taille) :
+    game_grid = normalize_grid_value(game_grid)
     #Prend une grille supposée vide et ajoute aléatoirement une tuile 2 et une 4
     place2x, place2y = random.randint(0,taille-1),random.randint(0,taille-1)
     place4x, place4y = random.randint(0,taille-1),random.randint(0,taille-1)
@@ -81,3 +86,8 @@ def grid_get_value(game_grid,x,y) :
     game_grid = normalize_grid_value(game_grid)
     return game_grid[x][y]
     
+def init_game(taille) :
+    game_grid = create_grid(taille)
+    game_grid = grid_add_new_tile(game_grid,taille, forceValue = "2")
+    game_grid = grid_add_new_tile(game_grid,taille, forceValue = "4")
+    return game_grid
