@@ -10,7 +10,7 @@ def create_grid(taille):
     """
     game_grid = []
     for i in range(0,taille):
-        game_grid.append([' ',' ',' ', ' '])
+        game_grid.append([' ' for j in range(taille)])
     return game_grid
 
 def grid_initialiser(game_grid):
@@ -45,3 +45,25 @@ def grid_add_random(game_grid):
 def grid_add_new_tile_at_position(game_grid,x,y,val):
     game_grid[x][y]=val
     return game_grid
+
+
+def grid_to_string(game_grid):
+    """
+    Function that take a grid and return a string element containing what to show to the people
+    """
+    taille=len(game_grid)
+    al=" ".join(["===" for i in range(taille)])
+    ligne=" "+al+"\n"
+    
+    def afficher_ligne(T):
+        l=' | '.join(T)
+        t='| '+l+' |\n'
+        print(t)
+        return t
+    L=[afficher_ligne(T) for T in game_grid]
+    
+    txt=ligne.join(L)
+    return ligne+txt+' '+al
+    
+    return txt
+    
