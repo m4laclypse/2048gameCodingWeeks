@@ -1,4 +1,4 @@
-from grid_2048 import *
+from Pgrid_2048 import *
 from pytest import *
 
 
