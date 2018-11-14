@@ -2,7 +2,7 @@ import random
 
 
 def create_grid(taille):
-    """Crée une grille vide et l'initialise avec une tuile 2 et une 4"""
+    """Crée une grille et l'initialise avec une tuile 2 et une 4"""
     game_grid = []
     for i in range(0,taille):
         game_grid.append([' ']*taille)
