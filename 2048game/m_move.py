@@ -1,3 +1,4 @@
+# -*-coding:Latin-1 -*
 import random
 
 def move_row_left(row) :

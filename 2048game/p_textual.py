@@ -1,7 +1,7 @@
 # -*-coding:Latin-1 -*
 def read_player_command():
     move = input("Enter your order (l (left), r (right), t (top), b (bottom)):")
-    while len(move)!=1 and move not in "gdhb":
+    while len(move)!=1 and move not in "lrtb":
         move = input("Error ! Enter your order (l (left), r (right), t (top), b (bottom)):")
     return move
 
@@ -14,7 +14,7 @@ def menu():
     print('3. Game theme')
     print('4. Exit')
     answer=()
-    while len(answer)!=1 and answer in "1234":
+    while len(answer)!=1 and answer not in "1234":
         answer('Incorrect Answer ! Do it again correctly this time')
     if (answer=='1'):
         #Launching the game
