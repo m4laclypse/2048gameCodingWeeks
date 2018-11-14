@@ -21,7 +21,7 @@ def menu():
         print('Launching the game')
     elif (answer=='2'):
         reponse=input('Size of the grid ?')
-        while type(eval(reponse))!='int' and int(reponse)>1:
+        while type(eval(reponse))!='int' and not int(reponse)>1:
             reponse=input('Size of the grid ?')
         size=int(reponse)
     elif (answer=='3'):

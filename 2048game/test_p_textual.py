@@ -1,4 +1,4 @@
-from Ptextual_2048 import *
+from p_textual import *
 from pytest import *
 import mock
 

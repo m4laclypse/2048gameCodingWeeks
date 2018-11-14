@@ -1,6 +1,6 @@
 # -*-coding:Latin-1 -*
 import random
-from Pgrid_2048 import grid_to_string
+from p_grid import grid_to_string
 
 
 def create_grid(taille):
@@ -26,7 +26,7 @@ def grid_add_new_tile(game_grid,taille, forceValue = "-1") :
         return game_grid
     newtilex, newtiley = get_new_position(game_grid)
     if forceValue == "-1" :      
-        """Ici forceValue permet de décider de la valeur à attribuer à la tuile, par défaut on donne une valeur aléatoire à la tuile"""
+        """Ici forceValue permet de décider de la valeur �  attribuer �  la tuile, par défaut on donne une valeur aléatoire �  la tuile"""
         game_grid[newtilex][newtiley] = get_value_new_tile()
     else :
         game_grid[newtilex][newtiley] = forceValue
