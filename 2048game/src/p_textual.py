@@ -13,12 +13,13 @@ def menu():
     print('2. Game size')
     print('3. Game theme')
     print('4. Exit')
-    answer=()
+    answer=input("Votre choix:")
     while len(answer)!=1 and answer not in "1234":
         answer('Incorrect Answer ! Do it again correctly this time')
     if (answer=='1'):
         #Launching the game
         print('Launching the game')
+        return 1
     elif (answer=='2'):
         reponse=input('Size of the grid ?')
         while type(eval(reponse))!='int' and not int(reponse)>1:
@@ -33,5 +34,5 @@ def menu():
             reponse=input('Theme of the game ?')
         themeIndex=int(reponse)-1
     elif (answer=='4'):
-        print('\nGoodbye')
+        return 4
     
