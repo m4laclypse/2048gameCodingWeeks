@@ -1,8 +1,8 @@
 # -*-coding:Latin-1 -*
 def read_player_command():
-    move = input("Entrez votre commande (g (gauche), d (droite), h (haut), b (bas)):")
+    move = input("Enter your order (l (left), r (right), t (top), b (bottom)):")
     while len(move)!=1 and move not in "gdhb":
-        move = input("Entrée incorrecte \n Entrez votre commande (g (gauche), d (droite), h (haut), b (bas)):")
+        move = input("Error ! Enter your order (l (left), r (right), t (top), b (bottom)):")
     return move
 
 def menu():
