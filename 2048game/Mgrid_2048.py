@@ -1,4 +1,5 @@
 import random
+from Pgrid_2048 import grid_to_string
 
 
 def create_grid(taille):
