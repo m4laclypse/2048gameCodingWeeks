@@ -8,3 +8,8 @@ def test_is_grid_full():
     assert (is_grid_full(grille1)==True)
     assert (is_grid_full(grille2)==False)
     
+def test_is_game_won() :
+    grille1=[["2048"," "],[" "," "]]
+    grille2=[[" "," "],[" "," "]]
+    assert (is_game_won(grille1) == True)
+    assert (is_game_won(grille2) == False)
