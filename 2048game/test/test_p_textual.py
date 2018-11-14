@@ -1,4 +1,4 @@
-from p_textual import *
+from test.p_textual import *
 from pytest import *
 import mock
 

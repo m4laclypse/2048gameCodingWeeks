@@ -1,4 +1,4 @@
-from m_move import *
+from src.m_move import *
 
 def test_move_row_left():
     assert move_row_left([" ", " ", " ", "2"]) == ["2", " ", " ", " "]

@@ -1,5 +1,5 @@
 from pytest import *
-from end_game import *
+from src.end_game import *
 
 
 def test_is_grid_full():

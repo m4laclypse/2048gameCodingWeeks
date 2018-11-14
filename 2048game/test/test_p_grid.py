@@ -1,4 +1,4 @@
-from p_grid import *
+from test.p_grid import *
 from pytest import *
 
 
