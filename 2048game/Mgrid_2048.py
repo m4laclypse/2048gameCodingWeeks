@@ -1,3 +1,4 @@
+# -*-coding:Latin-1 -*
 import random
 from Pgrid_2048 import grid_to_string
 

@@ -1,4 +1,5 @@
-from grid_2048 import *
+# -*-coding:Latin-1 -*
+from Mgrid_2048 import *
 from pytest import *
 
 def test_create_grid():
