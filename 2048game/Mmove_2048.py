@@ -55,3 +55,36 @@ def row_check_tile_direction(row,direction,index) :
             return("-1", taille)
         else :
             return (row[currentPosition], currentPosition)
+            
+def change_orientation_matrix(game_grid) :
+    """This function transforms the way the matrix is coded so that we code each column and not each row"""
+    size = len(game_grid)
+    new_grid = []
+    for i in range(size) :
+        tempRow=[]
+        for j in range(size) :
+            tempRow.append(game_grid[j][i])
+        new_grid.append(tempRow)
+    return new_grid
+    
+def move_grid(game_grid, direction) :
+    size = len(game_grid)
+    if direction == "l" :
+        for i in range(size):
+            game_grid[i] = move_row_left(game_grid[i])
+        return game_grid
+    if direction == "r" :
+        for i in range(size):
+            game_grid[i] = move_row_right(game_grid[i])
+        return game_grid
+    game_grid = change_orientation_matrix(game_grid)
+    if direction == "u" :
+        for i in range(size):
+            game_grid[i] = move_row_left(game_grid[i])
+        return change_orientation_matrix(game_grid)
+    if direction == "d" :
+        for i in range(size):
+            game_grid[i] = move_row_right(game_grid[i])
+        return change_orientation_matrix(game_grid)
+    
+        
